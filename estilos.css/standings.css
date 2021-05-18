@@ -1,0 +1,159 @@
+
+body{
+    background-image: url("/imagenes/semillas-de-cesped-12.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+#navbarComun {
+    background-color: rgb(3, 28, 31);
+    height: 150px;
+}
+/* ------------------- */
+.dropdown-menu {
+    background-color: rgb(3, 28, 31);
+    
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    border: 2px solid rgb(5, 45, 49);
+}
+
+.dropdown-menu img {
+    width: 20px;
+    margin: 0 5px 0 10px;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: lightgrey;
+   font-size: 13px;
+
+}
+/*-------------------------- */
+table img {
+    width: 40px;
+}
+
+
+.main {
+    width: 80%;
+    margin:auto;
+    margin-bottom: 100px;
+    
+}
+
+.container_table{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 80%; 
+    margin: auto;
+    background-color: rgba(166, 188, 190, 0.445);
+    border: 2px solid rgba(182, 201, 202, 0.445);
+    margin-top: 40px;
+
+}
+
+thead { 
+    background-color: rgba(161, 179, 180, 0.658);
+}
+
+thead tr th{
+    text-align: right;
+}
+
+thead tr th:first-of-type{
+    text-align: left;
+}
+
+thead tr th:last-of-type{
+    text-align: center;
+}
+
+
+
+
+tbody tr td {
+    text-align: right;
+}
+
+tbody tr td:nth-child(3) {
+    width: 400px;
+}
+
+tbody tr td:nth-child(1),
+tbody tr td:nth-child(2),
+tbody tr td:nth-child(3){
+    text-align: left;
+}
+
+
+tbody tr td:nth-child(12) {
+    text-align: center;
+}
+
+tbody tr:first-of-type,
+tbody tr:nth-child(2),
+tbody tr:nth-child(3),
+tbody tr:nth-child(4){
+    border-left: 3px solid dodgerblue;
+}
+
+tbody tr:nth-child(5),
+tbody tr:nth-child(6) {
+    border-left: 3px solid rgb(228, 156, 24);
+}
+
+tbody tr:last-of-type,
+tbody tr:nth-child(18),
+tbody tr:nth-child(19) {
+    border-left: 3px solid rgb(216, 19, 19);
+}
+
+tbody tr:first-of-type {
+    border-top: none;
+}
+
+tfoot {
+    height: 200px;
+}
+
+.containerFoot{
+    display: flex;
+    justify-content:left;
+    width: 100%;
+    background-color: rgba(241, 243, 243, 0.596);
+    margin-top: -15px;
+    padding: 20px;
+    border: 20px solid rgba(166, 188, 190, 0.445);;
+    height: 180px;
+}
+
+.containerFoot h3 {
+    font-size: 12px;
+    
+}
+
+.containerFoot p {
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+.containerInterior {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    /* width: 300px; */
+ 
+}
+
+.titulos {
+    display: flex;
+   
+}
+

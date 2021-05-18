@@ -1,0 +1,89 @@
+
+.navbar {
+    background-color: rgb(3, 28, 31);
+    height: 150px;
+}
+
+
+
+
+body{
+    background-color: rgb(223, 219, 219);
+}
+
+table img {
+    width: 40px;
+}
+
+.main {
+    width: 80%;
+    margin:auto;
+    margin-bottom: 100px;
+    
+}
+
+.dropdown-menu {
+    background-color: rgb(3, 28, 31);
+    
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    border: 2px solid rgb(5, 45, 49);
+}
+
+.dropdown-menu img {
+    width: 20px;
+    margin: 0 5px 0 10px;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: lightgrey;
+   font-size: 13px;
+
+}
+
+.containerTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+
+
+}
+
+.table {
+    width: 70%;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;  
+    background: rgba(166, 188, 190, 0.445);
+    
+}
+
+thead tr{
+    background: rgba(100, 113, 114, 0.76);
+}
+
+thead tr th{
+    text-align: center;
+}
+
+
+tbody tr td:nth-child(1),
+tbody tr td:nth-child(2){
+    text-align: right;
+}
+
+
+tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+
+tbody tr td:nth-child(5) {
+    text-align: left;
+
+}
+

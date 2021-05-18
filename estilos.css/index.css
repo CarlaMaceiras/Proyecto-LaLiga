@@ -1,0 +1,406 @@
+
+* {
+    font-family: "Rubik";
+}
+
+
+/*  HEADER  HOME */
+
+.linea-superior {
+    background: rgb(3, 28, 31);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.linea-superior .btn {
+    background: none;
+    border:none;
+    font-size: 13px;
+    margin-left: 30px;
+}
+
+.linea-superior .rrss {
+    display: flex;
+    text-align: right;
+    align-items: center;
+    margin-right: 20px;
+
+}
+
+.linea-superior .rrss p{
+    margin: 13px 10px auto auto;
+    color:white;
+    font-size: 13px;
+    
+}
+
+/* dropdown web equipos */
+
+.btn-group button:focus{
+    box-shadow: none;
+
+}
+
+.dropdown-menu {
+    min-width: 15rem;
+    background-color: rgb(3, 28, 31);
+    
+    
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    border: 2px solid rgb(5, 45, 49);
+}
+.dropdown-menu li:hover {
+    background-color: rgba(5, 45, 49, 0.589);
+    transform: scale(1.1);
+    border: none;
+}
+
+.dropdown-menu img {
+    width: 20px;
+    margin: 0 5px 0 10px;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: lightgrey;
+   font-size: 13px;
+
+}
+
+
+/* navbar */
+
+.navbar {
+    margin-top: 50px;
+    
+} 
+
+.container-fluid {
+    color: white;
+    
+}
+
+.container-fluid img{
+    margin-top: 15px;
+   
+}
+
+.navbar-nav {
+    padding-left: 30px;
+    color: lightgrey;
+    width: 500px;
+}
+
+
+
+.index .btn {
+    border-radius: 130px;
+    background-color: rgb(3, 28, 31);
+    color: white;
+    border:none;
+    margin-right: 100px;
+    margin-left: -10px;
+    width: 150px;
+}
+
+/* Carrousel */
+
+#carouselExampleSlidesOnly{
+    position: absolute;
+    z-index: -100; 
+    width: 100%;
+    
+}  
+
+.carousel-item img{
+    height: 800px;
+}
+
+/* Container redes sociales */
+
+.containerDelRRSS {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    justify-content: space-between;
+    
+    
+} 
+
+.titulo{
+    height: 300px;
+}
+
+.titulo h2{
+    color: white;
+    font-size: 80px;
+    text-align: center;  
+    margin-top: 200px;
+    font-weight:bolder;
+    font-style: oblique;
+    text-shadow:  3px 3px 2px rgb(3, 28, 31);;
+    
+}
+
+.containerRRSS{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+ 
+}
+
+.youtube {
+    display: flex;
+    flex-direction: column;
+}
+
+/*   STANDINGS  */
+
+/* BODY */
+
+body{
+    background-image: url("/imagenes/semillas-de-cesped-12.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} 
+
+/* HEADER */
+
+/* navbar */
+
+#navbarComun {
+    background-color: rgb(3, 28, 31);
+    /* height: 100px; */
+    margin-top: 0px;
+    
+    
+}
+
+#navbarComun .dropdown-menu a:hover {
+    background-color: rgba(5, 45, 49, 0.589);
+    color:lightgrey;
+}
+
+.comun .btn {
+    
+    color: white;
+    border:none;
+    margin-right: 100px;
+    margin-left: -10px;
+    width: 150px;
+}
+
+/*  MAIN  */
+
+.main {
+    width: 80%;
+    margin:auto;
+    margin-bottom: 100px;
+    
+}
+
+/* tabla Clasificación */
+
+.container_table-clasificacion{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 80%; 
+    margin: auto;
+    background-color: rgba(166, 188, 190, 0.705);
+    border: 2px solid rgba(182, 201, 202, 0.671);
+    margin-top: 40px;
+
+}
+
+.clasificacion thead { 
+    background-color: rgba(161, 179, 180, 0.349);
+}
+
+.clasificacion thead tr th{
+    text-align: right;
+}
+
+.clasificacion thead tr th:first-of-type{
+    text-align: left;
+}
+
+.clasificacion thead tr th:last-of-type{
+    text-align: center;
+}
+
+table img {
+    width: 40px;
+}
+
+.clasificacion tbody tr td {
+    text-align: right;
+}
+
+.clasificacion tbody tr td:nth-child(3) {
+    width: 400px;
+}
+
+.clasificacion tbody tr td:nth-child(1),
+.clasificacion tbody tr td:nth-child(2),
+.clasificacion tbody tr td:nth-child(3){
+    text-align: left;
+}
+
+
+.clasificacion tbody tr td:nth-child(12) {
+    text-align: center;
+}
+
+.clasificacion tbody tr:first-of-type,
+.clasificacion tbody tr:nth-child(2),
+.clasificacion tbody tr:nth-child(3),
+.clasificacion tbody tr:nth-child(4){
+    border-left: 3px solid dodgerblue;
+}
+
+.clasificacion tbody tr:nth-child(5),
+.clasificacion tbody tr:nth-child(6) {
+    border-left: 3px solid rgb(228, 156, 24);
+}
+
+.clasificacion tbody tr:last-of-type,
+.clasificacion tbody tr:nth-child(18),
+.clasificacion tbody tr:nth-child(19) {
+    border-left: 3px solid rgb(216, 19, 19);
+}
+
+.clasificacion tbody tr:first-of-type {
+    border-top: none;
+}
+
+.clasificacion tfoot {
+    height: 200px;
+}
+
+.containerFoot{
+    display: flex;
+    justify-content:left;
+    width: 100%;
+    background-color: rgba(241, 243, 243, 0.644);
+    margin-top: -15px;
+    padding: 20px;
+    border: 20px solid rgba(166, 188, 190, 0.623);;
+    height: 180px;
+}
+
+.containerFoot h3 {
+    font-size: 12px;
+    
+}
+
+.containerFoot p {
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+.containerInterior {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 300px;
+ 
+}
+.titulos {
+    display: flex;
+    margin-top: 0px;
+   
+}
+
+.titulos p {
+    margin-top: 0px;
+}
+
+/*  MATCHES  */
+
+.fondo {
+    background-color: rgba(102, 151, 102, 0.486);
+   
+}
+
+/* tabla Partidos */
+
+
+.containerTable-partidos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.partidos {
+    width: 70%;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 15px;  
+    background-color: rgba(166, 188, 190, 0.527);
+    border: 2px solid rgba(182, 201, 202, 0.527);
+    margin-top: 40px;
+    
+}
+
+.partidos thead tr{
+    background: rgba(100, 113, 114, 0.644);
+}
+
+.partidos thead tr th{
+    text-align: center;
+}
+
+
+#body_table tr td:nth-child(1),
+#body_table tr td:nth-child(2){
+    text-align: right;
+}
+
+
+#body_table tr td:nth-child(3) {
+    text-align: center;
+}
+
+
+#body_table tr td:nth-child(5) {
+    text-align: left;
+
+}
+
+/*  FOOTER  */
+
+footer {
+    background-color: rgba(211, 211, 211, 0.432);
+}
+
+/*  ESTADISTICAS  */
+
+.containerTable-estadisticas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    
+
+}
+
+.estadisticas {
+    width: 45%;
+    background-color: rgba(166, 188, 190, 0.705);
+    border: 2px solid rgba(182, 201, 202, 0.671);
+    margin-top: 100px;
+}
+
+.estadisticas thead { 
+    background-color: rgba(161, 179, 180, 0.349);
+}

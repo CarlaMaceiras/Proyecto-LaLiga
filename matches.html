@@ -69,6 +69,44 @@
 
             <div class="containerTable-partidos">
 
+                <div class="container-filtros">
+
+                    <!-- <label for="equipo">Equipo:</label>
+                    <select id="desplegableEquipo">
+                        <option value="all">Todos los equipos</option>
+                        <option value="cadiz">Cádiz CF</option>
+                        <option value="levante">Levante</option>
+
+                    </select> -->
+                    
+                    <input type="text" id="formulario" class="form-control">
+                    <button class="btn btn-info" id="botonFiltro">BOTON</button>
+
+                    <div class="checkbox">
+                        <div>
+                            <input type="checkbox" id="box_all" value="all">
+                            <label for="box_all">Todos los partidos</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="box_win" value="win">
+                            <label for="box_win">Partidos ganados</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="box_lost" value="lost">
+                            <label for="box_lost">Partidos perdidos</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="box_draw" value="draw">
+                            <label for="box_draw">Partidos empatados</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="box_next" value="next">
+                            <label for="box_next">Próximos partidos</label>
+                        </div>
+                    </div>
+
+                </div>
+
                 <table class="partidos table table-striped table-hover">
                     <thead>
                         <tr>

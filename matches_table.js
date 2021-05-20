@@ -1,12 +1,21 @@
 tablaEquipos(data.matches);
 
 let boton = document.getElementById("botonFiltro");
+let todos = document.querySelector("#box_all");
+let ganados = document.querySelector("#box_win");
+let perdidos = document.querySelector("#box_lost");
+let empatados = document.querySelector("#box_draw");
+let proximos = document.querySelector("#box_next");
 
 boton.addEventListener("click", () => filtrarNombres(data.matches));
 
-// let checkbox= document.getElementById("box");
+empatados.addEventListener("change", () => {filtrarNombres(data.matches) });
+ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
+perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
+proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
+todos.addEventListener("change", () => {filtrarNombres(data.matches) });
 
-// checkbox.addEventListener("click", () => filtroCheckbox (data.matches));
+
 
 function tablaEquipos(partidos) {
 
@@ -57,40 +66,72 @@ function tablaEquipos(partidos) {
 function filtrarNombres(equipos) {
 
     let formulario = document.querySelector("#formulario");                                   //para que cuando se escriba y demos al botón, detecte el texto 
-    let texto = formulario.value.toLowerCase();                                              //se guarda lo que el usuario escribe en el input en minúsculas
-    let nuevaLista = equipos.filter(equipo => {
+    let texto = formulario.value.toLowerCase();
+     
 
-        if (equipo.homeTeam.name.toLowerCase().includes(texto) || equipo.awayTeam.name.toLowerCase().includes(texto)) {
+    let nuevaLista = equipos.filter(equipo => {   
+
+        if (equipo.homeTeam.name.toLowerCase().includes(texto) || equipo.awayTeam.name.toLowerCase().includes(texto)) {  
             return true;
         } else {
             return false;
         }
-    });
+    })
 
-    tablaEquipos(nuevaLista);
+    if (!empatados.checked && !ganados.checked && !perdidos.checked && !proximos.checked || todos.checked){
+        return tablaEquipos(nuevaLista);
+    } 
+    
+    let filtroEstado= nuevaLista.filter((resultado) => {
+
+       if (empatados.checked == true){
+        
+            if (resultado.score.winner == "DRAW"){
+
+                return true;
+            }else {
+                return false
+            }
+
+        } else if (proximos.checked == true){
+
+            if (resultado.status== "SCHEDULED"){
+
+              return true;
+            }else {
+                return false
+            }
+        }else if (ganados.checked== true){
+
+            if(resultado.homeTeam.name.toLowerCase().includes(texto) && resultado.score.winner=="HOME_TEAM" || resultado.awayTeam.name.toLowerCase().includes(texto) &&resultado.score.winner=="AWAY_TEAM"){
+                return true;
+            }else {
+                return false
+            }
+           
+        }else if (perdidos.checked== true){
+
+            if(resultado.homeTeam.name.toLowerCase().includes(texto) && resultado.score.winner=="AWAY_TEAM" || resultado.awayTeam.name.toLowerCase().includes(texto) &&resultado.score.winner=="HOME_TEAM"){
+                return true;
+            }else {
+                return false
+            }
+            
+        }
+
+    })
+    
+    
+    
+
+    tablaEquipos(filtroEstado);
+    
 
 }
 
-// function filtroCheckbox(opciones) {
-
-//     let todos = document.querySelector("#box_all");
-
-//     let ganados = document.querySelector("#box_win");
-
-//     let perdidos = document.querySelector("#box_lost");
-
-//     let empatados = document.querySelector("#box_draw");
-
-//     let próximos = document.querySelector("#box_next");
-
-//     todos.addEventListener("click", opciones.filter(opcion => {
 
 
-//     })
 
-    
-
-// }
 
 
 

@@ -166,11 +166,11 @@
 /* BODY */
 
 body{
-    background-image: url("/imagenes/semillas-de-cesped-12.jpg");
+    background-image: url("/imagenes/piece-turf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
-} 
+
+}  
 
 /* HEADER */
 
@@ -327,10 +327,110 @@ table img {
 
 /*  MATCHES  */
 
+
 .fondo {
-    background-color: rgba(102, 151, 102, 0.486);
-   
+    background-color: rgba(160, 247, 160, 0.438);
+    
 }
+
+/*  loading  */
+
+@keyframes ldio-9xvb0x2662d {
+   0% { transform: translate(12px,80px) scale(0); }
+  25% { transform: translate(12px,80px) scale(0); }
+  50% { transform: translate(12px,80px) scale(1); }
+  75% { transform: translate(80px,80px) scale(1); }
+ 100% { transform: translate(148px,80px) scale(1); }
+}
+@keyframes ldio-9xvb0x2662d-r {
+   0% { transform: translate(148px,80px) scale(1); }
+ 100% { transform: translate(148px,80px) scale(0); }
+}
+@keyframes ldio-9xvb0x2662d-c {
+   0% { background: #ecf1c1 }
+  25% { background: #34796a }
+  50% { background: #525445 }
+  75% { background: #a0a485 }
+ 100% { background: #ecf1c1 }
+}
+.ldio-9xvb0x2662d div {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(80px,80px) scale(1);
+  background: #ecf1c1;
+  animation: ldio-9xvb0x2662d 1s infinite cubic-bezier(0,0.5,0.5,1);
+}
+.ldio-9xvb0x2662d div:nth-child(1) {
+  background: #a0a485;
+  transform: translate(148px,80px) scale(1);
+  animation: ldio-9xvb0x2662d-r 0.25s infinite cubic-bezier(0,0.5,0.5,1), ldio-9xvb0x2662d-c 1s infinite step-start;
+}.ldio-9xvb0x2662d div:nth-child(2) {
+  animation-delay: -0.25s;
+  background: #ecf1c1;
+}.ldio-9xvb0x2662d div:nth-child(3) {
+  animation-delay: -0.5s;
+  background: #a0a485;
+}.ldio-9xvb0x2662d div:nth-child(4) {
+  animation-delay: -0.75s;
+  background: #525445;
+}.ldio-9xvb0x2662d div:nth-child(5) {
+  animation-delay: -1s;
+  background: #34796a;
+}
+.loadingio-spinner-ellipsis-k53l2ug630r {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #f1f2f3;
+}
+.ldio-9xvb0x2662d {
+  
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-9xvb0x2662d div { box-sizing: content-box; }
+
+.loader {
+    background: rgba(102, 151, 102, 0.438);
+    width: 100%;
+    height: 100vh;
+    position:fixed;
+    z-index: 999;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 0.8s ease-in-out;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.loader2{
+    clip-path: circle(0% at 100% 0);
+}
+
+/*  filtros  */
+
+.container-filtros{
+    display:flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.container-filtros .caja{
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: auto;
+}
+
 
 /* tabla Partidos */
 

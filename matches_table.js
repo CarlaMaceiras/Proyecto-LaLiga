@@ -14,6 +14,8 @@ fetch(url, {
 }).then(data => {
     tablaEquipos(data.matches);
 
+   
+
     boton.addEventListener("click", () => filtrarNombres(data.matches));
     reset.addEventListener("click", () => tablaEquipos(data.matches));
 
@@ -22,7 +24,14 @@ fetch(url, {
     perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
     proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
     todos.addEventListener("change", () => { filtrarNombres(data.matches) });
+
+   
 })
+
+window.addEventListener("load", () => {
+    document.querySelector("#loader").classList.toggle("loader2");
+})
+
 
 let boton = document.getElementById("botonFiltro");
 let reset = document.querySelector("#reset");
@@ -31,7 +40,6 @@ let ganados = document.querySelector("#box_win");
 let perdidos = document.querySelector("#box_lost");
 let empatados = document.querySelector("#box_draw");
 let proximos = document.querySelector("#box_next");
-
 
 
 function tablaEquipos(partidos) {

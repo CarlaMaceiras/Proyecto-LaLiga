@@ -12,22 +12,17 @@ fetch(url, {
          return response.json(); 
         }                                              
 }).then(data => {
-        tablaEquipos(data.matches);
+    tablaEquipos(data.matches);
 
-        boton.addEventListener("click", () => filtrarNombres(data.matches));
-        reset.addEventListener("click", () => tablaEquipos(data.matches));
+    boton.addEventListener("click", () => filtrarNombres(data.matches));
+    reset.addEventListener("click", () => tablaEquipos(data.matches));
 
-        empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
-        ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
-        perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
-        proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
-        todos.addEventListener("change", () => { filtrarNombres(data.matches) });
+    empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
+    ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
+    perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
+    proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
+    todos.addEventListener("change", () => { filtrarNombres(data.matches) });
 })
-
-
-
-
-
 
 let boton = document.getElementById("botonFiltro");
 let reset = document.querySelector("#reset");
@@ -36,8 +31,6 @@ let ganados = document.querySelector("#box_win");
 let perdidos = document.querySelector("#box_lost");
 let empatados = document.querySelector("#box_draw");
 let proximos = document.querySelector("#box_next");
-
-
 
 
 
@@ -92,6 +85,12 @@ function filtrarNombres(equipos) {
     let nuevaLista = equipos.filter(equipo => {
 
         if (equipo.homeTeam.name.toLowerCase().includes(texto) || equipo.awayTeam.name.toLowerCase().includes(texto)) {
+            todos.disabled=false;
+            ganados.disabled=false;
+            perdidos.disabled=false;
+            empatados.disabled=false;
+            proximos.disabled=false;
+
             return true;
         } else {
             return false;

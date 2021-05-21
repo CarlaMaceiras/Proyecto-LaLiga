@@ -27,7 +27,24 @@ Top 5 equipos con menos goles en contra como visitante.
 
 // 10. Hacer console.log() para ver que todo está correcto.*/
 
-estadisticasPartidos(data.matches);
+const url = "https://api.football-data.org/v2/competitions/2014/matches";
+
+fetch(url, {
+    method: "GET",                                                      
+    headers: {
+        "x-Auth-Token": "0e151f8d5ade42229ee48ec4f37a054c"
+    }
+
+}).then(response => {
+        if (response.ok) {
+            return response.json();                                                          
+        }                                              
+}).then(data => {
+    estadisticasPartidos(data.matches);
+    estadisticasGolesContra(data.matches);
+})
+
+
 
 function estadisticasPartidos(partidos) {
 

@@ -69,44 +69,38 @@
 
             <div class="containerTable-partidos">
 
-                <div class="container-filtros">
+                <form action="javascript:void(0);">
+                    <div class="container-filtros">
 
-                    <!-- <label for="equipo">Equipo:</label>
-                    <select id="desplegableEquipo">
-                        <option value="all">Todos los equipos</option>
-                        <option value="cadiz">Cádiz CF</option>
-                        <option value="levante">Levante</option>
+                        <input type="text" id="formulario" class="form-control">
+                        <button class="btn btn-info" id="botonFiltro">Buscar</button>
+                        <button class="btn btn-info" id ="reset" type="reset">Limpiar</button>
 
-                    </select> -->
-                    
-                    <input type="text" id="formulario" class="form-control">
-                    <button class="btn btn-info" id="botonFiltro">BOTON</button>
-                    <button class="btn btn-info" type="reset">Limpiar</button>
+                        <div class="checkbox">
+                            <div>
+                                <input type="radio" id="box_all" value="all" name="resultado">
+                                <label for="box_all">Todos los partidos</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="box_win" value="win" name="resultado">
+                                <label for="box_win">Partidos ganados</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="box_lost" value="lost" name="resultado">
+                                <label for="box_lost">Partidos perdidos</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="box_draw" value="draw" name="resultado">
+                                <label for="box_draw">Partidos empatados</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="box_next" value="next" name="resultado">
+                                <label for="box_next">Próximos partidos</label>
+                            </div>
+                        </div>
 
-                    <div class="checkbox">
-                        <div>
-                            <input type="radio" id="box_all" value="all" name="resultado">
-                            <label for="box_all">Todos los partidos</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="box_win" value="win" name="resultado">
-                            <label for="box_win">Partidos ganados</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="box_lost" value="lost" name="resultado">
-                            <label for="box_lost">Partidos perdidos</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="box_draw" value="draw" name="resultado">
-                            <label for="box_draw">Partidos empatados</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="box_next" value="next" name="resultado">
-                            <label for="box_next">Próximos partidos</label>
-                        </div>
                     </div>
-
-                </div>
+                </form>
 
                 <table class="partidos table table-striped table-hover">
                     <thead>
@@ -170,7 +164,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
-    <script src="matches.js"></script>
     <script src="matches_table.js"></script>
 </body>
 

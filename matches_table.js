@@ -1,19 +1,43 @@
-tablaEquipos(data.matches);
+
+const url = "https://api.football-data.org/v2/competitions/2014/matches";
+
+fetch(url, {
+    method: "GET",                                                      //No hace falta poner GET porque es el que está por defecto. Si es otro método, sí hay que ponerlo.
+    headers: {
+        "x-Auth-Token": "0e151f8d5ade42229ee48ec4f37a054c"
+    }
+
+}).then(response => {
+        if (response.ok) {                                                          //Se podría poner: if (response.ok) response.json();
+         return response.json(); 
+        }                                              
+}).then(data => {
+        tablaEquipos(data.matches);
+
+        boton.addEventListener("click", () => filtrarNombres(data.matches));
+        reset.addEventListener("click", () => tablaEquipos(data.matches));
+
+        empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
+        ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
+        perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
+        proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
+        todos.addEventListener("change", () => { filtrarNombres(data.matches) });
+})
+
+
+
+
+
 
 let boton = document.getElementById("botonFiltro");
+let reset = document.querySelector("#reset");
 let todos = document.querySelector("#box_all");
 let ganados = document.querySelector("#box_win");
 let perdidos = document.querySelector("#box_lost");
 let empatados = document.querySelector("#box_draw");
 let proximos = document.querySelector("#box_next");
 
-boton.addEventListener("click", () => filtrarNombres(data.matches));
 
-empatados.addEventListener("change", () => {filtrarNombres(data.matches) });
-ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
-perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
-proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
-todos.addEventListener("change", () => {filtrarNombres(data.matches) });
 
 
 
@@ -57,75 +81,71 @@ function tablaEquipos(partidos) {
 
     }
 
-
-
-
-
 }
 
 function filtrarNombres(equipos) {
 
     let formulario = document.querySelector("#formulario");                                   //para que cuando se escriba y demos al botón, detecte el texto 
     let texto = formulario.value.toLowerCase();
-     
 
-    let nuevaLista = equipos.filter(equipo => {   
 
-        if (equipo.homeTeam.name.toLowerCase().includes(texto) || equipo.awayTeam.name.toLowerCase().includes(texto)) {  
+    let nuevaLista = equipos.filter(equipo => {
+
+        if (equipo.homeTeam.name.toLowerCase().includes(texto) || equipo.awayTeam.name.toLowerCase().includes(texto)) {
             return true;
         } else {
             return false;
         }
     })
 
-    if (!empatados.checked && !ganados.checked && !perdidos.checked && !proximos.checked || todos.checked){
+    if (!empatados.checked && !ganados.checked && !perdidos.checked && !proximos.checked || todos.checked) {
         return tablaEquipos(nuevaLista);
-    } 
-    
-    let filtroEstado= nuevaLista.filter((resultado) => {
+    }
 
-       if (empatados.checked == true){
-        
-            if (resultado.score.winner == "DRAW"){
+    let filtroEstado = nuevaLista.filter((resultado) => {
+
+        if (empatados.checked == true) {
+
+            if (resultado.score.winner == "DRAW") {
 
                 return true;
-            }else {
+            } else {
                 return false
             }
 
-        } else if (proximos.checked == true){
+        } else if (proximos.checked == true) {
 
-            if (resultado.status== "SCHEDULED"){
+            if (resultado.status == "SCHEDULED") {
 
-              return true;
-            }else {
-                return false
-            }
-        }else if (ganados.checked== true){
-
-            if(resultado.homeTeam.name.toLowerCase().includes(texto) && resultado.score.winner=="HOME_TEAM" || resultado.awayTeam.name.toLowerCase().includes(texto) &&resultado.score.winner=="AWAY_TEAM"){
                 return true;
-            }else {
+            } else {
                 return false
             }
-           
-        }else if (perdidos.checked== true){
+        } else if (ganados.checked == true) {
 
-            if(resultado.homeTeam.name.toLowerCase().includes(texto) && resultado.score.winner=="AWAY_TEAM" || resultado.awayTeam.name.toLowerCase().includes(texto) &&resultado.score.winner=="HOME_TEAM"){
+            if (resultado.homeTeam.name.toLowerCase().includes(texto) && resultado.score.winner == "HOME_TEAM" || resultado.awayTeam.name.toLowerCase().includes(texto) && resultado.score.winner == "AWAY_TEAM") {
                 return true;
-            }else {
+            } else {
                 return false
             }
-            
+
+        } else if (perdidos.checked == true) {
+
+            if (resultado.homeTeam.name.toLowerCase().includes(texto) && resultado.score.winner == "AWAY_TEAM" || resultado.awayTeam.name.toLowerCase().includes(texto) && resultado.score.winner == "HOME_TEAM") {
+                return true;
+            } else {
+                return false
+            }
+
         }
 
     })
-    
-    
-    
+
+
+
 
     tablaEquipos(filtroEstado);
-    
+
 
 }
 

@@ -17,6 +17,14 @@ fetch(url, {
         
 })
 
+window.onload= function() {
+
+    
+    let loader= document.querySelector("#loader");
+
+    loader.style.visibility= "hidden";
+    loader.style.opacity = "0";
+}
 
 function tablaClasificacion (clasificacion) {
 

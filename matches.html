@@ -15,6 +15,15 @@
 </head>
 
 <body>
+
+    <div class="loader-centrado" id="loader">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
         
     <header>
 
@@ -67,12 +76,6 @@
 
     <div class="fondo">
 
-        <div class="loader loadingio-spinner-ellipsis-k53l2ug630r" id="loader"><div class="ldio-9xvb0x2662d">
-            <div></div><div></div><div></div><div></div><div></div>
-            </div>
-        </div>
-        
-
         <section class="main">
 
             <div class="containerTable-partidos">
@@ -82,9 +85,16 @@
 
                         <div class="caja">
 
-                            <input type="text" id="formulario" placeholder="Buscar equipo..." class="form-control"> 
-                            <button class="btn btn-info" id="botonFiltro"><i class="fas fa-search"></i></button>
-                            <button class="btn btn-info" id ="reset" type="reset">Limpiar</button>
+                            
+                                <input type="text" id="formulario" placeholder="Buscar equipo..." class="buscarEquipo"> 
+                                <div class="botonesBusqueda">
+                                    <button class="btn btn-info" id="botonFiltro"><i class="fas fa-search"></i></button>
+                                </div>
+                            
+                                <div class="botonesBusqueda">
+                                    <button class=" btn btn-info" id ="reset" type="reset">Limpiar</button>
+                                </div>
+                            
                         </div>
 
                         <div class="checkbox">
@@ -92,21 +102,30 @@
                                 <input type="radio" id="box_all" value="all" name="resultado" disabled>
                                 <label for="box_all">Todos los partidos</label>
                             </div>
-                            <div>
-                                <input type="radio" id="box_win" value="win" name="resultado" disabled>
-                                <label for="box_win">Partidos ganados</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="box_lost" value="lost" name="resultado" disabled>
-                                <label for="box_lost">Partidos perdidos</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="box_draw" value="draw" name="resultado" disabled>
-                                <label for="box_draw">Partidos empatados</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="box_next" value="next" name="resultado" disabled>
-                                <label for="box_next">Próximos partidos</label>
+
+                            <div class="resultados">
+
+                                <div>
+                                    <div>
+                                        <input type="radio" id="box_win" value="win" name="resultado" disabled>
+                                        <label for="box_win">Ganados</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="box_lost" value="lost" name="resultado" disabled>
+                                        <label for="box_lost">Perdidos</label>
+                                    </div>
+                                </div>
+
+                                <div class="resultado2">
+                                    <div>
+                                        <input type="radio" id="box_draw" value="draw" name="resultado" disabled>
+                                        <label for="box_draw">Empatados</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="box_next" value="next" name="resultado" disabled>
+                                        <label for="box_next">Próximos partidos</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -122,6 +141,9 @@
                         </tr>
                     </thead>
                     <tbody id="body_table">
+                        <!-- <div class="alertaSinPartidos alert alert-warning" role="alert" disabled>
+                            No hay partidos que mostrar
+                          </div> -->
 
                     </tbody>
                 </table>

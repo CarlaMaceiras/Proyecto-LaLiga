@@ -44,6 +44,14 @@ fetch(url, {
     estadisticasGolesContra(data.matches);
 })
 
+window.onload= function() {
+
+    
+    let loader= document.querySelector("#loader");
+
+    loader.style.visibility= "hidden";
+    loader.style.opacity = "0";
+}
 
 
 function estadisticasPartidos(partidos) {

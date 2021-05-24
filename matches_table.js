@@ -17,21 +17,31 @@ fetch(url, {
    
 
     boton.addEventListener("click", () => filtrarNombres(data.matches));
-    reset.addEventListener("click", () => tablaEquipos(data.matches));
+    reset.addEventListener("click", () => {
+        todos.disabled=true;
+        ganados.disabled=true;
+        perdidos.disabled=true;
+        empatados.disabled=true;
+        proximos.disabled=true;
+        tablaEquipos(data.matches);
+    })
 
     empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
     ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
     perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
     proximos.addEventListener("change", () => { filtrarNombres(data.matches) });
-    todos.addEventListener("change", () => { filtrarNombres(data.matches) });
+    todos.addEventListener("change", () => { filtrarNombres(data.matches) }); 
 
+    
+})
+
+window.onload= function() {
    
-})
+    let loader= document.querySelector("#loader");
 
-window.addEventListener("load", () => {
-    document.querySelector("#loader").classList.toggle("loader2");
-})
-
+    loader.style.visibility= "hidden";
+    loader.style.opacity = "0";
+}
 
 let boton = document.getElementById("botonFiltro");
 let reset = document.querySelector("#reset");
@@ -88,6 +98,7 @@ function filtrarNombres(equipos) {
 
     let formulario = document.querySelector("#formulario");                                   //para que cuando se escriba y demos al botón, detecte el texto 
     let texto = formulario.value.toLowerCase();
+    let alerta= document.querySelector(".alertaSinPartidos");
 
 
     let nuevaLista = equipos.filter(equipo => {
@@ -109,6 +120,10 @@ function filtrarNombres(equipos) {
         return tablaEquipos(nuevaLista);
     }
 
+    // if (proximos== "" ){
+    //     alerta.disabled==false;
+    // }
+
     let filtroEstado = nuevaLista.filter((resultado) => {
 
         if (empatados.checked == true) {
@@ -122,6 +137,7 @@ function filtrarNombres(equipos) {
 
         } else if (proximos.checked == true) {
 
+            console.log (nuevaLista);
             if (resultado.status == "SCHEDULED") {
 
                 return true;

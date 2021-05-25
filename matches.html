@@ -24,7 +24,7 @@
             <div></div>
         </div>
     </div>
-        
+
     <header>
 
         <nav id="navbarComun" class="navbar navbar-expand-lg navbar-dark">
@@ -72,7 +72,7 @@
 
     </header>
 
-   
+
 
     <div class="fondo">
 
@@ -83,70 +83,82 @@
                 <form action="javascript:void(0);">
                     <div class="container-filtros">
 
-                        <div class="caja">
+                        <div class="buscarEquipos">
 
-                            
-                                <input type="text" id="formulario" placeholder="Buscar equipo..." class="buscarEquipo"> 
+                            <div class="escribirNombre">
+
+                                <input type="text" id="formulario" placeholder="Buscar equipo..." class="buscarEquipo">
                                 <div class="botonesBusqueda">
                                     <button class="btn btn-info" id="botonFiltro"><i class="fas fa-search"></i></button>
                                 </div>
-                            
+                            </div>
+
+                            <div class="borrarFiltrar">
+
                                 <div class="botonesBusqueda">
-                                    <button class=" btn btn-info" id ="reset" type="reset">Limpiar</button>
+                                    <button class=" btn btn-info" id="reset" type="reset">Limpiar</button>
                                 </div>
-                            
-                        </div>
 
-                        <div class="checkbox">
-                            <div>
-                                <input type="radio" id="box_all" value="all" name="resultado" disabled>
-                                <label for="box_all">Todos los partidos</label>
+                                <div class="botonOpcionesFiltro">
+                                    <button class=" btn btn-primary" id="botonOpciones" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                        aria-expanded="false" aria-controls="collapseExample">
+                                        Filtros
+                                    </button>
+                                </div>
+                                <div class="opciones collapse" id="collapseExample">
+
+                                    <div class="opciones">
+                                        <div>
+                                            <input type="radio" id="box_all" value="all" name="resultado" disabled>
+                                            <label for="box_all">Todos los partidos</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="radio" id="box_win" value="win" name="resultado" disabled>
+                                            <label for="box_win">Ganados</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="box_lost" value="lost" name="resultado" disabled>
+                                            <label for="box_lost">Perdidos</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="radio" id="box_draw" value="draw" name="resultado" disabled>
+                                            <label for="box_draw">Empatados</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="box_next" value="next" name="resultado" disabled>
+                                            <label for="box_next">Próximos</label>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div class="resultados">
-
-                                <div>
-                                    <div>
-                                        <input type="radio" id="box_win" value="win" name="resultado" disabled>
-                                        <label for="box_win">Ganados</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="box_lost" value="lost" name="resultado" disabled>
-                                        <label for="box_lost">Perdidos</label>
-                                    </div>
-                                </div>
-
-                                <div class="resultado2">
-                                    <div>
-                                        <input type="radio" id="box_draw" value="draw" name="resultado" disabled>
-                                        <label for="box_draw">Empatados</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="box_next" value="next" name="resultado" disabled>
-                                        <label for="box_next">Próximos partidos</label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
                 </form>
 
-                <table class="partidos table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Local</th>
-                            <th>Resultado</th>
-                            <th colspan="2">Visitante</th>
-                        </tr>
-                    </thead>
-                    <tbody id="body_table">
-                        <!-- <div class="alertaSinPartidos alert alert-warning" role="alert" disabled>
+                <div id="tablaPartidos" class="table-responsive">
+
+                    <table class="partidos table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Local</th>
+                                <th>Resultado</th>
+                                <th colspan="2">Visitante</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body_table">
+                            <!-- <div class="alertaSinPartidos alert alert-warning" role="alert" disabled>
                             No hay partidos que mostrar
                           </div> -->
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -157,38 +169,38 @@
                 <!-- Section: Social media -->
                 <section class="mb-4">
                     <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
                         <i class="fab fa-facebook"></i>
                     </a>
-
+    
                     <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
                             class="fab fa-twitter"></i></a>
-
+    
                     <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
                             class="fab fa-google"></i></a>
-
+    
                     <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
                             class="fab fa-instagram"></i></a>
-
+    
                     <!-- Linkedin -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
                             class="fab fa-linkedin-in"></i></a>
-
+    
                     <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i
                             class="fab fa-github"></i></a>
                 </section>
                 <!-- Section: Social media -->
             </div>
             <!-- Grid container -->
-
+    
             <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: black">
                 © 2021 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">laliga.com</a>
+                <a class="text-dark" href="https://mdbootstrap.com/">laliga.com</a>
             </div>
             <!-- Copyright -->
         </footer>

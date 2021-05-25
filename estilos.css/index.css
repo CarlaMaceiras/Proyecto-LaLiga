@@ -109,8 +109,6 @@
     
 }
 
-
-
 .index .btn {
     border-radius: 130px;
     background-color: rgb(3, 28, 31);
@@ -128,25 +126,21 @@
     z-index: -100; 
     width: 100%;
     
+    
 }  
-
-/* .carousel-item img{
-    height: 800px;
-} */
 
 /* Container redes sociales */
 
 .containerDelRRSS {
     display: flex;
     flex-direction: column;
-    height: 800px;
     justify-content: space-between;
     
     
 } 
 
 .titulo{
-    height: 300px;
+    margin-bottom: 80px;
 }
 
 .titulo h2{
@@ -172,6 +166,57 @@
 .youtube {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 560px) {
+
+    .rrss p{
+        display: none;
+    }
+
+    .navbar-toggler{
+        background-color: rgb(3, 28, 31);
+    }
+
+    #navbarSupportedContent{
+        background-color: rgb(3, 28, 31);
+        color: whitesmoke;
+        border: 1px solid grey;
+        
+    }
+
+    .nav-item:hover{
+        background-color: rgb(6, 54, 59);
+    }
+
+    .titulo{
+        margin-bottom: 100px;
+    }
+    .titulo h2{
+        font-size: 40px;
+        margin-top: 80px;
+        height: auto;
+        width: auto;
+    }
+
+    .containerRRSS{
+        flex-direction: column;
+        width: auto;
+        
+    }
+
+    .youtube{
+        order:0;
+    }
+
+    .facebookHome,
+    .youtube,
+    .twitterHome {
+        
+        margin-bottom: 20px;
+    }
+
+
 }
 
 /*   STANDINGS  */
@@ -225,7 +270,7 @@ body{
 
 .container_table-clasificacion{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%; 
@@ -236,12 +281,20 @@ body{
 
 }
 
-.clasificacion thead { 
-    background-color: rgba(161, 179, 180, 0.349);
+#tablaClasificacion{
+    overflow: scroll;
+    height: 450px;
+    width: 100%;   
 }
 
 .clasificacion thead tr th{
+    text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background: rgba(100, 113, 114, 0.801);
     text-align: right;
+
 }
 
 .clasificacion thead tr th:first-of-type{
@@ -307,18 +360,18 @@ table img {
     width: 100%;
     background-color: rgba(241, 243, 243, 0.644);
     margin-top: -15px;
-    padding: 20px;
+    padding: 10px;
     border: 20px solid rgba(166, 188, 190, 0.623);;
-    height: 180px;
+    height: 120px;
 }
 
 .containerFoot h3 {
-    font-size: 12px;
+    font-size: 10px;
     
 }
 
 .containerFoot p {
-    font-size: 11px;
+    font-size: 10px;
     margin-right: 10px;
 }
 
@@ -331,21 +384,21 @@ table img {
 }
 .titulos {
     display: flex;
-    margin-top: 0px;
-   
+    height: 15px;  
 }
 
-.titulos p {
-    margin-top: 0px;
+@media screen and (max-width: 560px) {
+    .containerFoot{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .containerInterior{
+        margin-top: 10px;
+    }
 }
 
 /*  MATCHES  */
-
-
-.fondo {
-    background-color: rgba(160, 247, 160, 0.438);
-    
-}
 
 
 /*  loading  */
@@ -432,36 +485,33 @@ table img {
     margin-top: 20px;
     justify-content: space-between;
     margin-bottom: 20px;
-    border-bottom: 3px double rgba(100, 113, 114, 0.644);
-    align-items: center;
-    
+    align-items: center;     
 }
 
-.container-filtros .caja{
+
+.container-filtros .buscarEquipos{
     display: flex;   
     margin-bottom: 20px;
+    justify-content: space-around;
 }
 
-
-.caja .btn {
-    background:none;
-    color: white;
-    border:none;
-}
-
-.container-filtros .caja .buscar{
-    display: flex;
-    justify-content:left;
-}
 
 .buscarEquipo {
     padding: 10px;
-    background: none;
+    background: rgba(100, 113, 114, 0.548);
     border: none;
     border-radius: 6px;
     text-align: center;
     margin-right: 20px;
+    max-height: 44px;
     
+}
+.escribirNombre{
+    display: flex;
+}
+
+.buscarEquipo::placeholder{
+    color:whitesmoke;
 }
 
 .buscarEquipo:hover{
@@ -477,27 +527,29 @@ table img {
 #botonFiltro{
     box-shadow: none;
     margin-right: 20px;
+    background:none;
+    color: white;
+    border:none;
+    font-size: 20px;
     
 }
 
 #botonFiltro:hover {
     background-color: #198754;
     box-shadow: none;
-    
-    
+       
 }
 
-.container-filtros .caja .limpiar{
-    text-align: center;
-    margin-top: 10px;
-    margin-left: 10px;
+.borrarFiltrar {
+    display: flex;
 }
 
 #reset{
     background-color: rgba(100, 113, 114, 0.644);
     color: whitesmoke;
     box-shadow: none;
-    margin-right: 40px;
+    padding: 10px;
+    border: none;
     
 
 }
@@ -509,30 +561,52 @@ table img {
     
 }
 
-.checkbox{
-    display: flex;
+#botonOpciones{
+    background-color: rgba(100, 113, 114, 0.644);
+    color: whitesmoke;
+    box-shadow: none;
+    padding: 10px;
+    border: none;
+    margin-left: 20px;
+}
+#botonOpciones:hover{
+    background-color: rgba(5, 45, 49, 0.589);
+    color: whitesmoke;
+    box-shadow: none;
+}
+
+.opciones{
+    display: flex;  
     flex-direction: column;
-    margin-bottom: 10px;
+    justify-content: space-between;
     
 }
 
-.checkbox .resultados {
-    display: flex;
+.opciones div {   
+    margin: 5px 0px 5px 5px;
 }
 
-.checkbox div {
-    margin-right: 30px;
+.opciones input {
+    display:none;
+    
+}
+
+.opciones label{
+    background-color: rgba(3, 28, 31, 0.616);
+    border-radius: 5px;
+    padding: 3px;
+    color: lightgrey;   
+}
+
+.opciones label:hover {
+    background-color: rgba(6, 54, 59, 0.548);
+}
+
+.opciones label:active{
+    background-color: lightgrey;
 } 
 
-.checkbox .resultados .resultado {
-    display: flex;
-    flex-direction: column;
-    
-}
 
-.checkbox .resultados .resultado2{
-    margin-left: 30px;
-}
 
 /* tabla Partidos */
 
@@ -543,25 +617,50 @@ table img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+#tablaPartidos{
+    overflow: scroll;
+    height: 350px;
+    width: 70%;      
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(211, 211, 211, 0.493);
+    border-radius: 4px;
 
 }
+
+::-webkit-scrollbar-thumb{
+    background: rgb(100, 113, 114);;
+    border-radius: 4px;
+}
+
+
 
 .partidos {
-    width: 70%;
-    border-radius: 5px 5px 5px 5px;
     font-size: 15px;  
-    background-color: rgba(166, 188, 190, 0.527);
+    background-color: rgba(166, 188, 190, 0.596);
     border: 2px solid rgba(182, 201, 202, 0.527);
-    
-    
+   
 }
 
-.partidos thead tr{
-    background: rgba(100, 113, 114, 0.644);
-}
+
 
 .partidos thead tr th{
     text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background: rgb(100, 113, 114);
+
+
 }
 
 
@@ -579,6 +678,16 @@ table img {
 #body_table tr td:nth-child(5) {
     text-align: left;
 
+}
+
+@media screen and (max-width: 560px) {
+    .buscarEquipos{
+        flex-direction: column;
+    }
+    .borrarFiltrar{
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
 }
 
 /* .alertaSinPartidos {
@@ -610,5 +719,11 @@ footer {
 }
 
 .estadisticas thead { 
-    background-color: rgba(161, 179, 180, 0.349);
+    background-color: rgba(100, 113, 114, 0.801);
+}
+
+@media screen and (max-width: 560px) {
+    .containerTable-estadisticas{
+        flex-direction: column;
+    }
 }

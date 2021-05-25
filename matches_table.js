@@ -25,7 +25,7 @@ fetch(url, {
         proximos.disabled=true;
         tablaEquipos(data.matches);
     })
-
+    
     empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
     ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
     perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });

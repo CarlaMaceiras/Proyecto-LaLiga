@@ -25,7 +25,7 @@ fetch(url, {
         proximos.disabled=true;
         tablaEquipos(data.matches);
     })
-    
+
     empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
     ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
     perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
@@ -56,6 +56,8 @@ function tablaEquipos(partidos) {
 
     let tabla = document.querySelector("#body_table");
     tabla.innerHTML = "";
+
+    
 
     for (let i = 0; i < partidos.length; i++) {
 
@@ -92,14 +94,14 @@ function tablaEquipos(partidos) {
 
     }
 
+    
+
 }
 
 function filtrarNombres(equipos) {
 
     let formulario = document.querySelector("#formulario");                                   //para que cuando se escriba y demos al botón, detecte el texto 
     let texto = formulario.value.toLowerCase();
-    let alerta= document.querySelector(".alertaSinPartidos");
-
 
     let nuevaLista = equipos.filter(equipo => {
 
@@ -120,9 +122,7 @@ function filtrarNombres(equipos) {
         return tablaEquipos(nuevaLista);
     }
 
-    // if (proximos== "" ){
-    //     alerta.disabled==false;
-    // }
+    
 
     let filtroEstado = nuevaLista.filter((resultado) => {
 
@@ -137,11 +137,11 @@ function filtrarNombres(equipos) {
 
         } else if (proximos.checked == true) {
 
-            console.log (nuevaLista);
             if (resultado.status == "SCHEDULED") {
 
                 return true;
             } else {
+                
                 return false
             }
         } else if (ganados.checked == true) {
@@ -163,8 +163,6 @@ function filtrarNombres(equipos) {
         }
 
     })
-
-
 
 
     tablaEquipos(filtroEstado);

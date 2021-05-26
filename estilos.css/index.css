@@ -163,10 +163,10 @@
  
 }
 
-.youtube {
+/* .youtube {
     display: flex;
     flex-direction: column;
-}
+} */
 
 .youtube video{
     border: 3px solid black; 
@@ -230,7 +230,7 @@
 /* BODY */
 
 body{
-    background-image: url("/imagenes/10_mejor_césped.jpg");
+    background-image: url("/imagenes/1530561709_549877_1530563518_noticia_normal.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 

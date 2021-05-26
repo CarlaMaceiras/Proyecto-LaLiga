@@ -168,6 +168,12 @@
     flex-direction: column;
 }
 
+.youtube video{
+    border: 3px solid black; 
+    
+}
+
+
 @media screen and (max-width: 560px) {
 
     .rrss p{
@@ -224,7 +230,7 @@
 /* BODY */
 
 body{
-    background-image: url("/imagenes/piece-turf.jpg");
+    background-image: url("/imagenes/10_mejor_césped.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -236,7 +242,6 @@ body{
 
 #navbarComun {
     background-color: rgb(3, 28, 31);
-    /* height: 100px; */
     margin-top: 0px;
     
     

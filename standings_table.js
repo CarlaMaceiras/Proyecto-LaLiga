@@ -18,8 +18,6 @@ fetch(url, {
 })
 
 window.onload= function() {
-
-    
     let loader= document.querySelector("#loader");
 
     loader.style.visibility= "hidden";

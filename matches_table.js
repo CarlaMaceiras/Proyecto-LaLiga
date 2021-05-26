@@ -26,6 +26,7 @@ fetch(url, {
         tablaEquipos(data.matches);
     })
 
+    
     empatados.addEventListener("change", () => { filtrarNombres(data.matches) });
     ganados.addEventListener("change", () => { filtrarNombres(data.matches) });
     perdidos.addEventListener("change", () => { filtrarNombres(data.matches) });
@@ -93,7 +94,6 @@ function tablaEquipos(partidos) {
         tabla.append(tr);
 
     }
-
     
 
 }
@@ -163,6 +163,8 @@ function filtrarNombres(equipos) {
         }
 
     })
+
+   
 
 
     tablaEquipos(filtroEstado);

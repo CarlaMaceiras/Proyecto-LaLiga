@@ -1,6 +1,9 @@
 
 * {
     font-family: "Rubik";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -19,6 +22,10 @@
     border:none;
     font-size: 13px;
     margin-left: 30px;
+}
+
+.linea-superior .btn:hover{
+    color:grey;
 }
 
 .linea-superior .rrss {
@@ -80,6 +87,11 @@
     
 } 
 
+
+.fixed-top{
+    z-index: 0;
+}
+
 .container-fluid {
     color: white;
     
@@ -94,9 +106,8 @@
     padding-left: 30px;
     color: lightgrey;
     width: 500px;
+    
 }
-
-
 
 .index .btn {
     border-radius: 130px;
@@ -115,25 +126,21 @@
     z-index: -100; 
     width: 100%;
     
+    
 }  
-
-.carousel-item img{
-    height: 800px;
-}
 
 /* Container redes sociales */
 
 .containerDelRRSS {
     display: flex;
     flex-direction: column;
-    height: 800px;
     justify-content: space-between;
     
     
 } 
 
 .titulo{
-    height: 300px;
+    margin-bottom: 80px;
 }
 
 .titulo h2{
@@ -156,9 +163,62 @@
  
 }
 
-.youtube {
-    display: flex;
-    flex-direction: column;
+
+.youtube video{
+    border: 3px solid black; 
+    
+}
+
+
+@media screen and (max-width: 560px) {
+
+    .rrss p{
+        display: none;
+    }
+
+    .navbar-toggler{
+        background-color: rgb(3, 28, 31);
+    }
+
+    #navbarSupportedContent{
+        background-color: rgb(3, 28, 31);
+        color: whitesmoke;
+        border: 1px solid grey;
+        
+    }
+
+    .nav-item:hover{
+        background-color: rgb(6, 54, 59);
+    }
+
+    .titulo{
+        margin-bottom: 100px;
+    }
+    .titulo h2{
+        font-size: 40px;
+        margin-top: 80px;
+        height: auto;
+        width: auto;
+    }
+
+    .containerRRSS{
+        flex-direction: column;
+        width: auto;
+        
+    }
+
+    .youtube{
+        order:0;
+    }
+
+    .facebookHome,
+    .youtube,
+    .twitterHome {
+        
+        margin-bottom: 20px;
+    }
+
+
 }
 
 /*   STANDINGS  */
@@ -166,11 +226,11 @@
 /* BODY */
 
 body{
-    background-image: url("/imagenes/semillas-de-cesped-12.jpg");
+    background-image: url("/imagenes/Alfombras-de-Césped-VITA-Soluciones-Integrales-Verdes4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
-} 
+
+}  
 
 /* HEADER */
 
@@ -178,10 +238,7 @@ body{
 
 #navbarComun {
     background-color: rgb(3, 28, 31);
-    /* height: 100px; */
-    margin-top: 0px;
-    
-    
+    margin-top: 0px;   
 }
 
 #navbarComun .dropdown-menu a:hover {
@@ -204,6 +261,7 @@ body{
     width: 80%;
     margin:auto;
     margin-bottom: 100px;
+    min-height: 390px;
     
 }
 
@@ -211,7 +269,7 @@ body{
 
 .container_table-clasificacion{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%; 
@@ -222,12 +280,20 @@ body{
 
 }
 
-.clasificacion thead { 
-    background-color: rgba(161, 179, 180, 0.349);
+#tablaClasificacion{
+    overflow: scroll;
+    height: 550px;
+    width: 100%;   
 }
 
 .clasificacion thead tr th{
+    text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background: rgba(100, 113, 114, 0.801);
     text-align: right;
+
 }
 
 .clasificacion thead tr th:first-of-type{
@@ -293,18 +359,18 @@ table img {
     width: 100%;
     background-color: rgba(241, 243, 243, 0.644);
     margin-top: -15px;
-    padding: 20px;
+    padding: 10px;
     border: 20px solid rgba(166, 188, 190, 0.623);;
-    height: 180px;
+    height: 120px;
 }
 
 .containerFoot h3 {
-    font-size: 12px;
+    font-size: 10px;
     
 }
 
 .containerFoot p {
-    font-size: 11px;
+    font-size: 10px;
     margin-right: 10px;
 }
 
@@ -317,49 +383,293 @@ table img {
 }
 .titulos {
     display: flex;
-    margin-top: 0px;
-   
+    height: 15px;  
 }
 
-.titulos p {
-    margin-top: 0px;
+@media screen and (max-width: 560px) {
+    .containerFoot{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .containerInterior{
+        margin-top: 10px;
+    }
 }
 
 /*  MATCHES  */
 
-.fondo {
-    background-color: rgba(102, 151, 102, 0.486);
-   
+
+/*  loading  */
+
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fed;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
 }
 
-/* tabla Partidos */
-
-
-.containerTable-partidos {
+.loader-centrado{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(51, 70, 51, 0.438);
+    width: 100%;
+    height: 100vh;
+    position:fixed;
+    z-index: 999;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 0.3s ease-in-out;
+    top:0;
+    left: 0;
+}
+  
+ 
 
+/*  filtros  */
+
+
+.container-filtros{
+    display:flex;   
+    margin-top: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;     
 }
 
-.partidos {
-    width: 70%;
-    border-radius: 5px 5px 5px 5px;
-    font-size: 15px;  
-    background-color: rgba(166, 188, 190, 0.527);
-    border: 2px solid rgba(182, 201, 202, 0.527);
-    margin-top: 40px;
+
+.container-filtros .buscarEquipos{
+    display: flex;   
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+
+.buscarEquipo {
+    padding: 10px;
+    background: rgba(100, 113, 114, 0.548);
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    margin-right: 20px;
+    max-height: 44px;
+    
+}
+.escribirNombre{
+    display: flex;
+}
+
+.buscarEquipo::placeholder{
+    color:whitesmoke;
+}
+
+.buscarEquipo:hover{
+    background-color: rgba(100, 113, 114, 0.295);
     
 }
 
-.partidos thead tr{
-    background: rgba(100, 113, 114, 0.644);
+.buscarEquipo:hover::placeholder{
+    color:whitesmoke;
+    
 }
+
+#botonFiltro{
+    box-shadow: none;
+    margin-right: 20px;
+    background:none;
+    color: white;
+    border:none;
+    font-size: 20px;
+    
+}
+
+#botonFiltro:hover {
+    background-color: #198754;
+    box-shadow: none;
+       
+}
+
+.borrarFiltrar {
+    display: flex;
+}
+
+#reset{
+    background-color: rgba(100, 113, 114, 0.644);
+    color: whitesmoke;
+    box-shadow: none;
+    padding: 10px;
+    border: none;
+    
+
+}
+
+#reset:hover{
+    background-color: rgba(5, 45, 49, 0.589);
+    color: whitesmoke;
+    box-shadow: none;
+    
+}
+
+#botonOpciones{
+    background-color: rgba(100, 113, 114, 0.644);
+    color: whitesmoke;
+    box-shadow: none;
+    padding: 10px;
+    border: none;
+    margin-left: 20px;
+}
+#botonOpciones:hover{
+    background-color: rgba(5, 45, 49, 0.589);
+    color: whitesmoke;
+    box-shadow: none;
+}
+
+.opciones{
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.opciones div {   
+    margin: 5px 0px 5px 5px;
+}
+
+.opciones input {
+    display:none;
+    
+}
+
+.opciones label{
+    background-color: rgba(3, 28, 31, 0.616);
+    border-radius: 5px;
+    padding: 3px;
+    color: lightgrey;   
+}
+
+.opciones label:hover {
+    background-color: rgba(6, 54, 59, 0.548);
+}
+
+.opciones label:active{
+    background-color: lightgrey;
+} 
+
+/* .radioFiltro:disabled{
+    display:
+} */
+
+/* tabla Partidos */
+
+.noExiste{
+    background-color: rgba(3, 28, 31, 0.795);
+    color: whitesmoke;
+    padding: 5px;
+
+}
+
+.containerTable-partidos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#tablaPartidos{
+    overflow: scroll;
+    height: 450px;
+    width: 70%;      
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(211, 211, 211, 0.493);
+    border-radius: 4px;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(100, 113, 114);;
+    border-radius: 4px;
+}
+
+
+
+.partidos {
+    font-size: 15px;  
+    background-color: rgba(166, 188, 190, 0.596);
+    border: 2px solid rgba(182, 201, 202, 0.527);
+   
+}
+
 
 .partidos thead tr th{
     text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background: rgb(100, 113, 114);
+
 }
 
+#body_table #noMensaje {
+    text-align: center;
+}
 
 #body_table tr td:nth-child(1),
 #body_table tr td:nth-child(2){
@@ -376,6 +686,17 @@ table img {
     text-align: left;
 
 }
+
+@media screen and (max-width: 560px) {
+    .buscarEquipos{
+        flex-direction: column;
+    }
+    .borrarFiltrar{
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+}
+
 
 /*  FOOTER  */
 
@@ -402,5 +723,11 @@ footer {
 }
 
 .estadisticas thead { 
-    background-color: rgba(161, 179, 180, 0.349);
+    background-color: rgba(100, 113, 114, 0.801);
+}
+
+@media screen and (max-width: 560px) {
+    .containerTable-estadisticas{
+        flex-direction: column;
+    }
 }

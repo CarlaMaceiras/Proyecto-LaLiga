@@ -1,3 +1,4 @@
+
 const url = "https://api.football-data.org/v2/competitions/2014/matches";
 
 fetch(url, {
@@ -17,9 +18,11 @@ fetch(url, {
 
     boton.addEventListener("click", () => filtrarNombres(data.matches));
     reset.addEventListener("click", () => {
+
         let mensaje= document.querySelector(".noExiste");
         mensaje.style.display= "none";
         
+
         todos.disabled=true;
         ganados.disabled=true;
         perdidos.disabled=true;
@@ -45,6 +48,7 @@ fetch(url, {
 })
 
 window.onload= function() { 
+
     let loader= document.querySelector("#loader");
 
     loader.style.visibility= "hidden";
@@ -60,6 +64,7 @@ let perdidos = document.querySelector("#box_lost");
 let empatados = document.querySelector("#box_draw");
 let proximos = document.querySelector("#box_next");
 
+
 let botonListaFiltros= document.querySelector("#botonOpciones");
 let botonesRadio= document.querySelector("#collapseExample");
 
@@ -69,6 +74,7 @@ function tablaEquipos(partidos) {
 
     let tabla = document.querySelector("#body_table");
     tabla.innerHTML = "";
+
 
     if (partidos.length== 0){
         let tr = document.createElement("tr");
@@ -81,6 +87,7 @@ function tablaEquipos(partidos) {
         tabla.append(tr);
 
     }
+
 
     for (let i = 0; i < partidos.length; i++) {
 
@@ -124,6 +131,7 @@ function filtrarNombres(equipos) {
 
     let formulario = document.querySelector("#formulario");                                   //para que cuando se escriba y demos al botón, detecte el texto 
     let texto = formulario.value.toLowerCase();
+
     
     let mensaje= document.querySelector(".noExiste");
     mensaje.style.display= "none";
@@ -134,6 +142,7 @@ function filtrarNombres(equipos) {
             botonListaFiltros.disabled=false;
             
             todos.disabled=false
+
             ganados.disabled=false;
             perdidos.disabled=false;
             empatados.disabled=false;
@@ -143,7 +152,6 @@ function filtrarNombres(equipos) {
         } else {
             return false;
         }
-
         
     })
     
@@ -157,10 +165,11 @@ function filtrarNombres(equipos) {
         return tablaEquipos(nuevaLista);
     }
 
+
     let filtroEstado = nuevaLista.filter((resultado) => {
 
         if (empatados.checked == true) {
-       
+
             if (resultado.score.winner == "DRAW") {
 
                 return true;
@@ -192,13 +201,13 @@ function filtrarNombres(equipos) {
             } else {
                 return false
             }
-
         }     
 
     })
 
 
     tablaEquipos(filtroEstado);
+
 
 
 }

@@ -1,5 +1,31 @@
 
-listaWeb (data.teams);
+
+const url = "https://api.football-data.org/v2/competitions/2014/teams";
+
+fetch(url, {
+    method: "GET",                                                     
+    headers: {
+        "x-Auth-Token": "0e151f8d5ade42229ee48ec4f37a054c"
+    }
+
+}).then(response => {
+        if (response.ok) {                                                          
+         return response.json(); 
+        }                                              
+}).then(data => {
+    listaWeb (data.teams);
+
+})
+
+window.onload= function() {
+
+    
+    let loader= document.querySelector("#loader");
+
+    loader.style.visibility= "hidden";
+    loader.style.opacity = "0";
+}
+
 
 function listaWeb (webEquipos){
     console.log(webEquipos);

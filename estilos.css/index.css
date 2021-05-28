@@ -164,6 +164,7 @@
 }
 
 
+
 .youtube video{
     border: 3px solid black; 
     
@@ -226,7 +227,9 @@
 /* BODY */
 
 body{
+
     background-image: url("/imagenes/Alfombras-de-Césped-VITA-Soluciones-Integrales-Verdes4.jpg");
+
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -238,7 +241,9 @@ body{
 
 #navbarComun {
     background-color: rgb(3, 28, 31);
+
     margin-top: 0px;   
+
 }
 
 #navbarComun .dropdown-menu a:hover {
@@ -507,6 +512,7 @@ table img {
 }
 .escribirNombre{
     display: flex;
+
 }
 
 .buscarEquipo::placeholder{
@@ -522,6 +528,7 @@ table img {
     color:whitesmoke;
     
 }
+
 
 #botonFiltro{
     box-shadow: none;
@@ -605,9 +612,7 @@ table img {
     background-color: lightgrey;
 } 
 
-/* .radioFiltro:disabled{
-    display:
-} */
+
 
 /* tabla Partidos */
 
@@ -617,6 +622,7 @@ table img {
     padding: 5px;
 
 }
+
 
 .containerTable-partidos {
     display: flex;
@@ -631,6 +637,7 @@ table img {
     height: 450px;
     width: 70%;      
 }
+
 
 ::-webkit-scrollbar{
     width: 10px;
@@ -650,13 +657,13 @@ table img {
 
 
 
+
 .partidos {
     font-size: 15px;  
     background-color: rgba(166, 188, 190, 0.596);
     border: 2px solid rgba(182, 201, 202, 0.527);
    
 }
-
 
 .partidos thead tr th{
     text-align: center;

@@ -17,6 +17,15 @@
 
 <body>
 
+  <div class="loader-centrado" id="loader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   <header>
 
     <div class="linea-superior">
@@ -36,18 +45,23 @@
         <p>Síguenos en </p>
 
         <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/search/top?q=laliga"
+          role="button">
           <i class="fab fa-facebook"></i>
         </a>
 
         <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/LaLiga" role="button"><i
+            class="fab fa-twitter"></i></a>
 
         <!-- Google -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1"
+          href="https://www.google.com/search?q=laliga&rlz=1C1CHBF_esES868ES868&oq=laliga&aqs=chrome..69i57j0i67i433j0i433j46i67i131i433j0i433j0j0i433l2j0j0i433.1398j1j15&sourceid=chrome&ie=UTF-8#sie=lg;/g/11j0y2m458;2;/m/09gqx;mt;fp;1;;"
+          role="button"><i class="fab fa-google"></i></a>
 
         <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/laliga/" role="button"><i
+            class="fab fa-instagram"></i></a>
 
       </div>
 
@@ -76,14 +90,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="estadisticas.html">Estadísticas</a>
-          </li>
-
-
+            </li>
           </ul>
-          <form class="index d-flex">
-
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
         </div>
       </div>
     </nav>
@@ -116,23 +124,27 @@
 
     <div class="containerRRSS">
 
-      <iframe
-        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaliga&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-        width="340" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+      <div class="facebookHome">
+        <iframe 
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaliga&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+          width="340" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
 
 
       <div class="youtube">
-        <iframe id="ytplayer" type="text/html" width="300" height="180" src="http://www.youtube.com/embed/QvfK_Yc5GCQ"
-          frameborder="0"></iframe>
-        <iframe id="ytplayer" type="text/html" width="300" height="180" src="http://www.youtube.com/embed/x4igHuE1ybI"
-          frameborder="0"></iframe>
+
+        <video src="/imagenes/TOP GOLES Abril LaLiga Santander 2020_2021.mp4" width="400"  autoplay muted loop></video>
+
       </div>
 
-      <a class="twitter-timeline" data-width="300" data-height="400"
-        href="https://twitter.com/marca?ref_src=twsrc%5Etfw">Tweets by marca</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="twitterHome">
+
+        <a class="twitter-timeline" data-width="300" data-height="400"
+          href="https://twitter.com/marca?ref_src=twsrc%5Etfw">Tweets by marca</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
     </div>
   </div>
 
@@ -140,7 +152,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
     crossorigin="anonymous"></script>
-  <script src="teams.js"></script>
+
   <script src="teams_lista.js"></script>
 </body>
 

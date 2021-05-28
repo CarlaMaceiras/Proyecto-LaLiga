@@ -15,10 +15,10 @@ Página web donde se puede consultar el estado de la liga española de fútbol.
 
 ## Version 📌
 
-version 1.0
+version 1.1
 
 ## TO DO ✒️
 
-* Incluir mensaje si la tabla filtrada está vacía.
-* Mejorar el aspecto en versión móvil.
-* Revisar Array Methods. 
+* Cambiar apariencia de iconos en la tabla de clasificación
+* Hacerla más responsive
+* Añadir más ligas
